@@ -3,7 +3,9 @@ name: Atualiza badge de testes
 on:
   push:
     branches:
-      - criar-badge
+      - main
+    paths:
+      - 'exercicios/**'
   workflow_dispatch:
 
 permissions:
