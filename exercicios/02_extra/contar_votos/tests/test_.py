@@ -1,14 +1,14 @@
-from metro_milimetro.main import resposta
+from contar_votos.main import resposta
 import inspect
 import pytest
 
 
 def test_not_none():
-    assert resposta(10) is not None, "Esperado valor diferente de 'None'"
+    assert resposta([10, 20]) is not None, "Esperado valor diferente de 'None'"
 
 
 def test_type():
-    assert type(resposta(13)) == int or type(resposta(3.2)) == float, "Esperado um inteiro ou float"
+    assert type(resposta([10, 20])) == dict, "Esperado um dicionário"
 
 
 def test_parameters():
@@ -16,6 +16,6 @@ def test_parameters():
 
 
 def test_options_resposta():
-    assert resposta(10) == 10000, f"Esperado valor 10000"
-    assert resposta(1.2) == 1200, f"Esperado valor 1200"
-    assert resposta(0.93) == 930, f"Esperado valor 930"
+    assert resposta([10, 20]) == {'10': 1, '20': 1}, f"Esperado valor {{'10': 1, '20': 1}}"
+    assert resposta([]) == {}, f"Esperado valor '{{}}'"
+    assert resposta(['A', 'B', 'A', 'C', 'A']) == {'A': 3, 'B': 1, 'C': 1}, f"Esperado valor {{'A': 3, 'B': 1, 'C': 1}}"
