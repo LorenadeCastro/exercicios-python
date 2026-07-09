@@ -1,14 +1,14 @@
-from metro_milimetro.main import resposta
+from soma_sentinela.main import resposta
 import inspect
 import pytest
 
 
 def test_not_none():
-    assert resposta(10) is not None, "Esperado valor diferente de 'None'"
+    assert resposta([1, 2, 3]) is not None, "Esperado valor diferente de 'None'"
 
 
 def test_type():
-    assert type(resposta(13)) == int or type(resposta(3.2)) == float, "Esperado um inteiro ou float"
+    assert type(resposta([1, 2, 3])) == int, "Esperado um inteiro."
 
 
 def test_parameters():
@@ -16,6 +16,6 @@ def test_parameters():
 
 
 def test_options_resposta():
-    assert resposta(10) == 10000, f"Esperado valor 10000"
-    assert resposta(1.2) == 1200, f"Esperado valor 1200"
-    assert resposta(0.93) == 930, f"Esperado valor 930"
+    assert resposta([1, 2, 3]) == 6, f"Esperado valor 6"
+    assert resposta([0, 5]) == 0, f"Esperado valor 0"
+    assert resposta([4, 7, 2, 0, 9]) == 13, f"Esperado valor 13"

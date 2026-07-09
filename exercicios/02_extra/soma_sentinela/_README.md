@@ -15,7 +15,6 @@ Abra o arquivo `main.py`. Dentro dele, localize a função `resposta`.
 
 A função recebe o parâmetro `numeros` (uma lista de números inteiros). Percorra a lista com um laço `while`, somando os valores, e **pare assim que encontrar o número `0`**. O `0` funciona como sinal de parada e **não** deve ser incluído na soma. A função deve retornar a soma obtida.
 
-Em um programa interativo, cada número seria lido com `input()` dentro do laço, repetindo até o usuário digitar `0`. Aqui, esses valores já chegam prontos no parâmetro `numeros`.
 
 Regras:
 
