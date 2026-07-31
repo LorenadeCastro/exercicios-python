@@ -1,2 +1,2 @@
 def resposta(palavra, index):
-    pass
+    return palavra[:index] + palavra[index + 1:]
